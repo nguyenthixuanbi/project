@@ -1,0 +1,64 @@
+<?php 
+                  $conn = Connection::getInstance();
+                  $id= $conn->prepare("select work_content.id from work inner JOIN work_content on work.id=work_content.fk_work_id where fk_work_id=:id");
+                  $query = $conn->prepare("select start, deadline from work_time inner join content_time on content_time.fk_worktime_id=work_time.id inner join work_content on work_content.id=content_time.fk_workcontent_id where work_content.id=:id");
+                  $query->execute(array("id"=>$id));
+                  $time=$query->fetch();
+                   echo isset($time->start) ? strtotime($time->start):0 ; 
+?>
+public function time(){
+		 	$id = isset($_GET["id"])&&is_numeric($_GET["id"]) ? $_GET["id"] : 0;
+          $conn = Connection::getInstance();
+          $id_content= $conn->prepare("select work.id from work inner JOIN work_content on work.id=work_content.fk_work_id where fk_work_id=:id");
+          $query = $conn->prepare("select start, deadline from work_time inner join content_time on content_time.fk_worktime_id=work_time.id inner join work_content on work_content.id=content_time.fk_workcontent_id where work_content.id=:id_content");
+          $query->execute(array("id"=>$id,"id_content"=>$id_content));
+          $time=$query->fetch();
+		}
+<?php $i=1; ?>
+<?php foreach($data as $rows): ?>
+<?php $i++; ?>
+<?php endforeach; ?>
+ <!-- rows -->
+            <div class="row" style="margin-top:5px;">
+                <div class="col-md-2">Category</div>
+                <div class="col-md-10">
+                    <select name="category_id" class="form-control" style="width: 300px;">
+                        <?php 
+                            $conn = Connection::getInstance();
+                            $query = $conn->query("select * from tbl_category order by id desc");
+                            //lay tat ca ket qua tra ve
+                            $category = $query->fetchAll();
+                            foreach($category as $rows):
+                         ?>
+<option <?php if(isset($record->category_id)&&$record->category_id==$rows->id): ?> selected <?php endif; ?> value="<?php echo $rows->id; ?>"><?php echo $rows->name; ?></option>
+                    <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
+            <!-- end rows -->
+tên work
+<!-- row -->
+      <div class="row" style="margin-bottom: 5px;">
+        <div class="col-md-3">Tiêu đề</div>
+        <div class="col-md-9"><!-- <input type="text" required name="fk_work_id" class="form-control" value="<?php //echo isset($record->name_work)? $record->name_work:""; ; ?>"> -->
+        <select name="fk_work_id" class="form-control" style="width: 300px;">
+        <?php 
+          $conn=Connection::getInstance();
+          $query = $conn->query("select * from work order by id desc");
+          $work=$query->fetchAll();
+          foreach($work as $rows):
+         ?>
+        <option <?php if(isset($record->fk_work_id)&&$record->fk_work_id==$rows->id): ?> selected <?php endif; ?> value="<?php echo $rows->id; ?>"><?php echo $rows->name_work; ?></option>
+        <?php endforeach; ?>
+      </select>
+        </div>
+      </div>
+    <!-- end row -->
+
+thêm trang của giám đốc
+thêm trang của trưởng phòng
+giải pháp công nghệ thông báo
+giám đốc 
+- quản lý nhân viên
+- nhắc việc cho nhân viên
+  

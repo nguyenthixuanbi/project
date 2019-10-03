@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>SB Admin - Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet" />
+  </head>
+
+  <body id="page-top">
+    <!-- nav  bar  -->
+    <nav class="navbar navbar-expand navbar-light  bg-white static-top">
+      <a class="navbar-brand " href="index.html"
+        ><img src="https://www.haui.edu.vn//media/73/t73821.jpg" width="50px" height="50px"
+      /></a>
+      <h3 class="order-1 order-sm-0 text-dark" style="font-family: Calibri; font-size: 25px">
+        GHI CHÚ VÀ NHẮC VIỆC
+      </h3>
+      <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"></div>
+      <!-- Navbar -->
+      <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown no-arrow mx-1">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="alertsDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+          <span class="badge badge-danger">9+</span>
+            <i class="fas fa-bell fa-fw"></i>
+            
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="userDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+          <!-- <span class="badge badge-danger">9+</span> -->
+            <i class="fas fa-user-circle fa-fw"></i>
+
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+            <a class="dropdown-item" href="#">Settings</a>
+            <!-- <a class="dropdown-item" href="#">Activity Log</a> -->
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"
+              >Logout</a
+            >
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <!-- <link rel="import" href="sidebar.html" > -->
+      <ul class="sidebar navbar-nav bg-light">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-home text-dark"></i>
+            <span class="text-dark" style="font-family: Calibri; font-size: 18px ;">Trang chủ</span>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="">
+            <i class="fas fa-clock text-dark"></i>
+            <span class="text-dark" style="font-family: Calibri; font-size: 18px ;">Nhắc nhở</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="charts.html">
+            <i class="fa fa-book text-dark"></i>
+            <span style="font-family: Calibri; font-size: 18px ;" class="text-dark">Ghi chú</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">
+            <i class="fas fa-fw fa-table text-dark"></i>
+            <span
+              class="text-dark"
+              style="font-family: Calibri; font-size: 18px ;"
+              href="charts.html"
+              >Lịch</span
+            ></a
+          >
+        </li>
+      </ul>
+
+      <div id="content-wrapper" class="bg-dark_light">
+        <div class="container-fluid">
+          <!-- Breadcrumbs-->
+          <ol class="breadcrumb ">
+            <li class="breadcrumb-item ">
+              <a href="#">Ghi chú</a>
+            </li>
+            <!-- <li class="breadcrumb-item active">Overview</li> -->
+          </ol>
+
+          <!-- DataTables Example -->
+        <div class="col-md-12"  style="margin-top: 30px;margin-bottom: 30px;">
+          <div class="row">
+            <!-- tao ghi chu -->
+          <div class="col-md-4 border border-primary">
+            <form method="post" action="">
+            <!-- <div class="panel panel-primary"> -->
+            <div class="panel-heading" style="font-weight: bold; text-align: center; color: red;">Ghi chú</div>
+            <div class="panel-body">
+            <!-- row -->
+            <div class="row" style="margin-bottom: 5px;">
+            <div class="col-md-3">Tiêu đề</div>
+            <div class="col-md-9"><input type="text" required name="tieude" class="form-control"></div>
+          </div>
+          <!-- end row -->
+          <!-- row -->
+          <div class="row" style="margin-bottom: 5px;">
+            <div class="col-md-3">Nội dung</div>
+            <div class="col-md-9"><textarea name="noidung" class="form-control" style="height:250px;"></textarea></div>
+          </div>
+          <!-- end row -->
+          <!-- row -->
+          <div class="row" style="margin-bottom: 5px;">
+            <div class="col-md-2"></div>
+            <div class="col-md-10"><input type="submit" value="Tạo" class="btn btn-primary"> <input type="reset" value="Hủy" class="btn btn-danger"></div>
+          </div>
+        <!-- end row -->
+            </div>
+           <!-- </div> -->
+          </form>
+        </div>
+        <!--end tao ghi chu -->
+        <!-- ds ghi chu -->
+        <div class="col-md-8 border">
+            <table style="margin-top: 30px;" class="table table-bordered" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>STT</th>
+                  <th>Tiêu đề</th>
+                  <th>Nội dung</th>
+                  <th>Ngày tạo</th>
+                  <th>Chức năng</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Kiểm tra</td>
+                  <td>kiểm tra giao diện lấy điểm thường xuyên lần 1</td>
+                  <td>24/9/2019</td>
+                  <td style="text-align:center;">
+                    <a href="#">Edit</a>&nbsp;
+                    <a href="#" onclick="return window.confirm('Are you sure?');">Delete</a>
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+        </div>  
+        <!-- end ds ghi chu -->
+          </div>
+        </div>
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Nhóm 9 Phần mềm hướng dịch vụ</span>
+              <br />
+              <br />
+              <span>Giáo viên hướng dẫn: Thầy giáo Hoàng Quang Huy</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <!-- /.content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div
+      class="modal fade"
+      id="logoutModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Select "Logout" below if you are ready to end your current session.
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="js/demo/datatables-demo.js"></script>
+    <script src="js/demo/chart-area-demo.js"></script>
+  </body>
+</html>
