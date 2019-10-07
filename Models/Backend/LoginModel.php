@@ -10,9 +10,9 @@
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();
 			//chuan bi truy van
-			$query = $conn->prepare("select email from tbl_user where email=:mail and password=:pass");
+			$query = $conn->prepare("select email from users where email=:email and password=:pass");
 			//thuc hien truy van co truyen danh sach bien
-			$query->execute(array("mail"=>$email,"pass"=>$password));
+			$query->execute(array("email"=>$email,"pass"=>$password));
 			//lay mot ban ghi
 			$result = $query->fetch();
 			return $result;

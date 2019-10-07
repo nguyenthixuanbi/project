@@ -16,9 +16,12 @@
           <?php if(isset($record->fk_work_id)){
              $id=$record->fk_work_id;
              $work=$this->getName($id);
-          }
+            }
+            else{
+              $a=$_SESSION['work'];
+            }
             ?>
-      <input readonly type="text" name="fk_work_id" class="form-control" value="<?php echo isset($work->id)? $work->id:0; ?>">
+      <input readonly type="text" name="fk_work_id" class="form-control" value="<?php echo isset($work->id)? $work->id:$a; ?>">
         </div>
       </div>
     <!-- end row -->

@@ -5,7 +5,6 @@
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();
 			//thuc thi truy van
-			// $query = $conn->query("select * from work_content inner join work on work.id=work_content.fk_work_id order by work_content.id desc limit $from, $pageSize");
 			$query = $conn->query("select * from work_content inner join work on work.id=work_content.fk_work_id where work_content.fk_work_id=$id order by work_content.workcontent_id desc limit $from, $pageSize");
 			//lay tat ca ket qua tra ve
 			return $query->fetchAll();
@@ -43,7 +42,6 @@
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();
 			//chuan bi truy van
-			//$query = $conn->prepare("select * from work_content inner join work on work.id=work_content.fk_work_id where work_content.id=:id");
 			$query = $conn->prepare("select id from work_content where fk_work_id=:id");
 			//thuc thi truy van
 			$query->execute(array("id"=>$id));
@@ -63,7 +61,6 @@
 			$conn = Connection::getInstance();
 			//chuan bi truy van
 			$query = $conn->prepare("update work_content set content=:content, note=:note, request=:request, workday=:workday, fk_work_id=:fk_work_id where workcontent_id=:id");
-			
 			//thuc thi truy van
 			$query->execute(array("id"=>$id,"content"=>$content, "note"=>$note, "request"=>$request,"workday"=>$workday,"fk_work_id"=>$fk_work_id));
 		}

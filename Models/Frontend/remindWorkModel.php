@@ -47,10 +47,6 @@
 		}
 		public function update($id){
 			$namework = $_POST["namework"];
-			// $start = $_POST["start"];
-			// $deadline=$_POST["deadline"];
-			//update ban ghi
-			//lay bien ket noi csdl
 			$conn = Connection::getInstance();
 			//chuan bi truy van
 			$query = $conn->prepare("update work set name_work=:namework where id=:id");

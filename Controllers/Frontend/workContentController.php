@@ -18,16 +18,10 @@
 			$from = $p * $pageSize;
 			//lay cac ban ghi
 			$id = isset($_GET["id"])&&is_numeric($_GET["id"]) ? $_GET["id"] : 0;
+			//$id=$_SESSION['work'];
 			$data = $this->fetchAll($id,$from,$pageSize);
-			// var_dump($data);
-			// die();
-			//$data=$this->listWorkContent($id);
-			// var_dump($data);
-			// die();
 			//goi view, truyen du lieu ra view
 			$this->renderHTML("Views/Frontend/workContentView.php",array("data"=>$data,"numPage"=>$numPage,"id"=>$id));
-			
-			//$this->renderHTML("Views/Frontend/workContentView.php",array("data"=>$data,));
 		}
 		public function edit(){
 			$id = isset($_GET["id"])&&is_numeric($_GET["id"]) ? $_GET["id"] : 0;
@@ -42,26 +36,23 @@
 			$id = isset($_GET["id"])&&is_numeric($_GET["id"]) ? $_GET["id"] : 0;
 			//goi ham insert trong model de insert ban ghi
 			$this->update($id);
-			// var_dump($a);
-			// die();
-			//quay tro lai duong dan
-			header("location:index.php?area=Frontend&controller=workContent&action=index");
+			$a=$_SESSION['work'];
+			header("location:index.php?area=Frontend&controller=workContent&action=index&id=$a");
 		}
 		public function add(){
+			$id = isset($_GET["id"])&&is_numeric($_GET["id"]) ? $_GET["id"] : 0;
+            $work_id=$this->getName($id);
 			//tao bien $formAction de dieu phoi action cua form
 			$formAction = "index.php?area=Frontend&controller=workContent&action=doAdd";
 			//goi view, truyen du lieu ra view
-			$this->renderHTML("Views/Frontend/add_edit_workContent.php",array("formAction"=>$formAction));
-			//$this->renderHTML("Views/Frontend/add_edit_work.php");
+			$this->renderHTML("Views/Frontend/add_edit_workContent.php",array("formAction"=>$formAction,"work_id"=>$work_id));
 		}
 		//do add user
 		public function doAdd(){
 			//goi ham insert trong model de insert ban ghi
 			$this->insert();
-			// var_dump($a);
-			// die();
-			//quay tro lai duong dan
-			header("location:index.php?area=Frontend&controller=workContent");
+			$a=$_SESSION['work'];
+			header("location:index.php?area=Frontend&controller=workContent&action=index&id=$a");
 		}
 		public function delete(){
 			$id = isset($_GET["id"])&&is_numeric($_GET["id"]) ? $_GET["id"] : 0;
