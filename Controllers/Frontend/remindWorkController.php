@@ -9,9 +9,6 @@
 			$pageSize = 4;
 			//tinh tong so ban ghi
 			$totalRecord = $this->totalRecord();//ham trong model
-			//$totalRecord=5;
-			//tinh so trang
-			//ham ceil su dung de lay tran. VD: ceil(2.1)=3
 			$numPage = ceil($totalRecord/$pageSize);
 			//lay bien p truyen tren url
 			$p = isset($_GET["p"])&&is_numeric($_GET["p"])&&$_GET["p"]>0 ? ($_GET["p"]-1) : 0;
@@ -19,9 +16,6 @@
 			$From = $p * $pageSize;
 			//lay cac ban ghi
 			$data = $this->FetchAll($From,$pageSize);
-			// var_dump($data);
-			// die(); 
-			//goi view, truyen du lieu ra view
 			$this->renderHTML("Views/Frontend/remindWorkView.php",array("data"=>$data,"numPage"=>$numPage));
 		}
 		//edit user
@@ -29,6 +23,7 @@
 			$id = isset($_GET["id"])&&is_numeric($_GET["id"]) ? $_GET["id"] : 0;
 			//goi ham trong model de lay 1 ban ghi
 			$record = $this->fetch($id);
+			$_SESSION['work']=$record->id;
 			//tao bien $FormAction de dieu phoi action cua Form
 			$FormAction = "index.php?area=Frontend&controller=remindWork&action=doEdit&id=$id";
 			//goi view, truyen du lieu ra view
@@ -37,9 +32,6 @@
 		//do edit user
 		public Function doEdit(){
 			$id = isset($_GET["id"])&&is_numeric($_GET["id"]) ? $_GET["id"] : 0;
-			//goi ham insert trong model de insert ban ghi
-			// var_dump($_POST["namework"]);
-			// die();
 			$this->update($id);
 			$id_time=$this->up($id);
 			// var_dump($id_time);

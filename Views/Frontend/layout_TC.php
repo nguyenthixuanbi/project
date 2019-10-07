@@ -54,26 +54,6 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li>
-        <!-- <li class="nav-item dropdown no-arrow mx-1">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="messagesDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <i class="fas fa-envelope fa-fw"></i>
-            <span class="badge badge-danger">7</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> -->
         <li class="nav-item dropdown no-arrow">
           <a
             class="nav-link dropdown-toggle"
@@ -137,10 +117,6 @@
 
       <div id="content-wrapper" class="bg-dark_light">
       <?php echo $this->view; ?>
-        <!-- /.container-fluid -->
-
-        <!-- Sticky Footer -->
-        <!-- Sticky Footer -->
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
@@ -154,9 +130,6 @@
       </div>
       <!-- /.content-wrapper -->
     </div>
-    <!-- /#wrapper -->
-
-    <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>

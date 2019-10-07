@@ -20,7 +20,7 @@
 	    <!-- <li class="breadcrumb-item active">Overview</li> -->
 	  </ol>
 	  <div style="margin-bottom:5px;">
-        <a href="index.php?area=frontend&controller=remindWork&action=add" class="btn btn-primary">Tạo</a>
+        <a href="index.php?area=Frontend&controller=remindWork&action=add" class="btn btn-primary">Tạo</a>
     </div>
 	     <!-- DataTables Example -->
 	    <div class="card mb-3">
