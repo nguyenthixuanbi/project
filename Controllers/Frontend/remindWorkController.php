@@ -20,9 +20,9 @@
 			$From = $p * $pageSize;
 			//lay cac ban ghi
 			$data = $this->getAll($a,$From,$pageSize);
-			var_dump($data);
-			echo $data->pk_work_id;
-			die();
+			// var_dump($data);
+			// echo $data->pk_work_id;
+			// die();
 			// if($data!=NULL){
 			// 	// $_SESSION['pk_work_id']=$data->pk_work_id;
 			// 	// $a=$_SESSION['pk_work_id'];

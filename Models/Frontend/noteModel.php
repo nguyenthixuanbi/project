@@ -19,17 +19,6 @@
 			//tra ve tong so luong ban ghi
 			return $query->rowCount();
 		}
-		//lay mot ban ghi
-		// public function fetch($id,$id_user){
-		// 	//lay bien ket noi csdl
-		// 	$conn = Connection::getInstance();
-		// 	//chuan bi truy van
-		// 	$query = $conn->prepare("select * from note where id=:id and fk_user_id=:id_user");
-		// 	//thuc thi truy van
-		// 	$query->execute([':id'=>$id,":id_user"=>$id_user]);
-		// 	//tra ve tong so luong ban ghi
-		// 	return $query->fetch();
-		// }
 		public function fetch($id){
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();
