@@ -32,7 +32,13 @@
             </div>
           </div>
           <!-- end row -->
-          
+          <!-- row -->
+          <div class="row" style="margin-bottom: 5px;">
+            <div class="col-md-3">Ngày tạo</div>
+            <div class="col-md-9"><input type="date" value="<?php echo isset($record->time_note)?$record->time_note:''; ?>" name="daynote" class="form-control" required>
+            </div>
+          </div>
+          <!-- end row -->
           <!-- row -->
           <div class="row" style="margin-bottom: 5px;">
             <div class="col-md-2"></div>
@@ -62,11 +68,11 @@
                 <?php foreach($data as $rows): ?>
                 <tr>
                   <td><?php echo $i; ?></td>
-                  <td><?php echo $rows->worknote ?></td>
-                  <td><?php echo date("Y/m/d"); ?></td>
+                  <td><?php echo $rows->worknote; ?></td>
+                  <td><?php echo date("d/m/Y", strtotime($rows->time_note)); ?></td>
                   <td style="text-align:center;">
                     <a href="index.php?area=Frontend&controller=note&action=edit&id=<?php echo $rows->id; ?>">Edit</a>&nbsp;
-                    <a href="index.php?area=Frontend&controller=note&action=delete&id=<?php echo $rows->id; ?>" onclick="return window.confirm('Are you sure?');">Delete</a>
+                    <a href="index.php?area=Frontend&controller=note&action=delete&id=<?php echo $rows->id; ?>" onclick="return window.confirm('Bạn muốn xóa?');">Delete</a>
                   </td>
                 </tr>
                 <?php $i++; ?>

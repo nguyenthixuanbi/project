@@ -18,11 +18,11 @@
 	       Data Table Example</div> -->
         <div class="card-body">
           <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="background: #ccc;">
               <thead>
                 <tr class="bg-light">
-                  <th> </th>
-                  <th><span>Thứ 2</span><br><span>ngày</span></th>
+                  <th></th>
+                  <th>Thứ 2</th>
                   <th>Thứ 3</th>
                   <th>Thứ 4</th>
                   <th>Thứ 5</th>
@@ -33,19 +33,74 @@
               </thead>
               
               <tbody>
-                <tr class="bg-warning">
-                  <td>7h30</td>
-                  <td>
-                    <span style="font-weight:bold;">Kiểm tra</span>:<span>Môn dịch vụ</span><br>
-                    <span style="font-weight:bold;">Thời gian</span>:<span>25/09/2019</span>
+                <?php 
+                   $date = getdate();
+                  $day = $date['mday'] + 1;
+                 ?>
+                <?php foreach($data as $rows): ?>
+                <?php  $thu=date("w", strtotime($rows->workday));
+                  $getday = date("d", strtotime($rows->workday));
+                
+                 ?>
+                <tr>
+                  <td><?=  date("H:i", strtotime($rows->workday)) ?></td>
+                  <td style="<?= $day == $getday &&$thu == 1?"background:yellow":'';  ?>"><?php if ($thu == 1){ ?>
+                    <!-- <span style="font-weight:bold;"><?= $rows->name_work ?></span><br> --><span><?= $rows->content ?></span><br>
+                    <span style="font-weight:bold;">Thời gian</span>:<span><?=  date("Y/m/d", strtotime($rows->workday)) ?></span><br>
+                    <span style="font-weight:bold;">Note</span>:<span><?= $rows->note ?></span><br>
+                    <span style="font-weight:bold;">Yêu cầu</span>:<span><?= $rows->request ?></span>
+                  <?php } ?>
                   </td>
-                  <td>thí is demo table</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>thí is demo table</td>
-                  <td>thí is demo table</td>
+                  <td style="<?= $day == $getday&&$thu == 2 ?"background:yellow":'';  ?>"><?php if ($thu == 2){ ?>
+                    <!-- <span style="font-weight:bold;"><?= $rows->name_work ?></span><br> --><span><?= $rows->content ?></span><br>
+                    <span style="font-weight:bold;">Thời gian</span>:<span><?=  date("Y/m/d", strtotime($rows->workday)) ?></span><br>
+                    <span style="font-weight:bold;">Note</span>:<span><?= $rows->note ?></span><br>
+                    <span style="font-weight:bold;">Yêu cầu</span>:<span><?= $rows->request ?></span>
+                  <?php } ?>
+                  </td>
+                   
+                  <td style="<?= $day == $getday&&$thu == 3 ?"background:yellow":'';  ?>"><?php if ($thu == 3){ ?>
+                    <!-- <span style="font-weight:bold;"><?= $rows->name_work ?></span><br> --><span><?= $rows->content ?></span><br>
+                    <span style="font-weight:bold;">Thời gian</span>:<span><?=  date("Y/m/d", strtotime($rows->workday)) ?></span><br>
+                    <span style="font-weight:bold;">Note</snhupan>:<span><?= $rows->note ?></span><br>
+                    <span style="font-weight:bold;">Yêu cầu</span>:<span><?= $rows->request ?></span>
+                  <?php } ?>
+                  </td>
+                   
+                  <td style="<?= $day == $getday&&$thu == 4 ?"background:yellow":'';  ?>"><?php if ($thu == 4){ ?>
+                   <!--  <span style="font-weight:bold;"><?= $rows->name_work ?></span><br> --><span><?= $rows->content ?></span><br>
+                    <span style="font-weight:bold;">Thời gian</span>:<span><?=  date("Y/m/d", strtotime($rows->workday)) ?></span><br>
+                    <span style="font-weight:bold;">Note</span>:<span><?= $rows->note ?></span><br>
+                    <span style="font-weight:bold;">Yêu cầu</span>:<span><?= $rows->request ?></span>
+                  <?php } ?>
+                  </td>
+                   
+                  <td style="<?php echo $day == $getday&&$thu == 5 ?"background:yellow":'';  ?>"><?php if ($thu == 5){ ?>
+                    <!-- <span style="font-weight:bold;"><?= $rows->name_work ?></span><br> --><span><?= $rows->content ?></span><br>
+                    <span style="font-weight:bold;">Thời gian</span>:<span><?=  date("Y/m/d", strtotime($rows->workday)) ?></span><br>
+                    <span style="font-weight:bold;">Note</span>:<span><?= $rows->note ?></span><br>
+                    <span style="font-weight:bold;">Yêu cầu</span>:<span><?= $rows->request ?></span>
+                  <?php } ?>
+                  </td>
+                  
+                  <td style="<?= $day == $getday&&$thu == 6 ?"background:yellow":'';  ?>"><?php if ($thu == 6){ ?>
+                   <!--  <span style="font-weight:bold;"><?= $rows->name_work ?></span><br> --><span><?= $rows->content ?></span><br>
+                    <span style="font-weight:bold;">Thời gian</span>:<span><?=  date("Y/m/d", strtotime($rows->workday)) ?></span><br>
+                    <span style="font-weight:bold;">Note</span>:<span><?= $rows->note ?></span><br>
+                    <span style="font-weight:bold;">Yêu cầu</span>:<span><?= $rows->request ?></span>
+                  <?php } ?>
+                  </td>
+                   
+                  <td style="<?= $day == $getday&&$thu == 0?"background:yellow":'';  ?>"><?php if ($thu == 0){ ?>
+                   <!--  <span style="font-weight:bold;"><?= $rows->name_work ?></span><br> --><span><?= $rows->content ?></span><br>
+                    <span style="font-weight:bold;">Thời gian</span>:<span><?=  date("Y/m/d", strtotime($rows->workday)) ?></span><br>
+                    <span style="font-weight:bold;">Note</span>:<span><?= $rows->note ?></span><br>
+                    <span style="font-weight:bold;">Yêu cầu</span>:<span><?= $rows->request ?></span>
+                  <?php } ?>
+                  </td>
+                  
                 </tr>
+              <?php endforeach; ?>
               </tbody>
             </table>
           </div>

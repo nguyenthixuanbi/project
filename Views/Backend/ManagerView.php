@@ -1,34 +1,27 @@
 <?php 
     //ket thua layout1.php de load vao day
     $this->fileLayout = "Views/Backend/Layout1.php";
- ?>               
-<div class="col-md-1"></div>    
-<div class="col-md-10">
+ ?>                  
+<div class="col-md-12">
     <div style="margin-bottom:5px;">
-        <?php if($_SESSION['role_id'] == 2) {?>
-        <a href="index.php?area=backend&controller=User&action=add" class="btn btn-primary">Add user</a>
-        <?php } ?>
+        <a href="index.php?area=backend&controller=User&action=add" class="btn btn-primary">Add manager</a>
     </div>
     <div class="panel panel-primary">
-        <div class="panel-heading">List User</div>
+        <div class="panel-heading">List manager</div>
         <div class="panel-body">
             <table class="table table-bordered table-hover">
                 <tr>
                     <th>Fullname</th>
                     <th>Email</th>
-                    <th style="width:150px;"></th>
+                    <th style="width:100px;"></th>
                 </tr>
                 <?php foreach($data as $rows): ?>
                 <tr>
                     <td><?php echo $rows->name; ?></td>
                     <td><?php echo $rows->email; ?></td>
                     <td style="text-align:center;">
-                        <?php if($_SESSION['role_id'] == 2){?>
                         <a href="index.php?area=backend&controller=User&action=edit&id=<?php echo $rows->id; ?>"><i class="fa fa-cogs"></i> Edit</a><br>
-                        <?php } ?>
-                        <?php if($_SESSION['role_id']==1){ ?>
                         <a href="index.php?area=backend&controller=User&action=delete&id=<?php echo $rows->id; ?>" onclick="return window.confirm('Are you sure?');"><i class="fa fa-trash"></i> Delete</a>
-                        <?php } ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

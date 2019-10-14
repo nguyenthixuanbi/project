@@ -1,10 +1,14 @@
 <?php 
-	//controller mac dinh khi controller khong truyen tren url
+	include "Models/Frontend/HomeModel.php";
 	class HomeViewController extends Controller{		
-		//action mac dinh khi action khong truyen tren url
+		use HomeModel;
+		public function __construct(){
+			$this->authentication();
+		}
 		public function index(){
-			//goi view
-			$this->renderHTML("Views/FrontEnd/HomeView.php");
+			$a = $_SESSION["id"];
+			$data = $this->getAll($a);//goi view
+			$this->renderHTML("Views/FrontEnd/HomeView.php",["data"=>$data]);
 		}		
 	}
  ?>

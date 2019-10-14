@@ -1,7 +1,8 @@
 <?php 
-	//include "Models/Frontend/HomeModel.php";
 	class HomeController extends Controller{
-		//use HomeModel;
+		// public function __construct(){
+		// 	$this->authentication();
+		// }
 		public function index(){
 			$this->renderHTML("Views/Frontend/Home.php");
 		}

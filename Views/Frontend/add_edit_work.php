@@ -5,7 +5,7 @@
 
 <div class="col-md-12">	
 	<div class="panel panel-primary">
-		<div class="panel-heading">Add edit Work</div>
+		<div class="panel-heading" style="font-weight: bold; color: red;">Thêm sửa công việc</div>
 		<div class="panel-body">
 		<form method="post" action="<?php echo $FormAction; ?>">		
 			<!-- rows -->
@@ -20,7 +20,7 @@
 			<div class="row" style="margin-top:5px;">
 				<div class="col-md-2">Ngày bắt đầu</div>
 				<div class="col-md-10">
-					<input type="datetime-local" value="<?php echo isset($record->start)?$record->start:''; ?>" name="start" class="form-control" required>
+					<input type="date" value="<?php echo isset($record->start)?$record->start:''; ?>" name="start" class="form-control" required>
 				</div>
 			</div>
 			<!-- end rows -->
@@ -28,7 +28,7 @@
 			<div class="row" style="margin-top:5px;">
 				<div class="col-md-2">Ngày kết thúc</div>
 				<div class="col-md-10">
-					<input type="datetime-local" value="<?php echo isset($record->deadline)?$record->deadline:''; ?>" name="deadline" class="form-control" required>
+					<input type="date" value="<?php echo isset($record->deadline)?$record->deadline:''; ?>" name="deadline" class="form-control" required>
 				</div>
 			</div>
 			<!-- end rows -->
@@ -36,7 +36,7 @@
 			<div class="row" style="margin-top:5px;">
 				<div class="col-md-2"></div>
 				<div class="col-md-10">
-					<input type="submit" value="Process" class="btn btn-primary">
+					<input type="submit" value="Tạo" class="btn btn-primary">
 					<input type="reset" value="Hủy" class="btn btn-danger">
 				</div>
 			</div>

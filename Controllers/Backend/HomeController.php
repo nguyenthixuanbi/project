@@ -8,7 +8,6 @@
 		}
 		//action mac dinh khi action khong truyen tren url
 		public function index(){
-			//goi view
 			$this->renderHTML("Views/Backend/HomeView.php");
 		}		
 	}
