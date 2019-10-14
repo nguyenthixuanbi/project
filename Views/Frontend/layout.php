@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0027)http://localhost/timelover/ -->
 <html lang="en" class="gr__localhost"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	   
 	   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,82 +8,23 @@
 	   <link rel="stylesheet" href="Assets/Frontend/js/materialize.min.css">
 	   <script src="Assets/Frontend/js/materialize.min.js.tải xuống"></script>
 	   <link href="Assets/Frontend/js/icon" rel="stylesheet">
-
+		<link rel="stylesheet" type="text/css" href="Assets/Frontend/css/style_BE.css">
 	   <style>
-	     .collection .collection-item.avatar {
-	       min-height: 70px;
-	 padding-left: 72px;
-	 position: relative;
-	     }
-	     .collection .collection-item.avatar .title {
-	   font-size: 20px;
-	   display: block;
-	   margin-top: 10px;
-	 }
-	 nav ul a,
-	 nav .brand-logo {
-	   color: #444;
-	 }
-
-	 p {
-	   line-height: 2rem;
-	 }
-
-	 .sidenav-trigger {
-	   color: #26a69a;
-	 }
-
-	 .parallax-container {
-	   min-height: 380px;
-	   line-height: 0;
-	   height: auto;
-	   color: rgba(255,255,255,.9);
-	 }
-	   .parallax-container .section {
-	     width: 100%;
-	   }
-
-	 @media only screen and (max-width : 992px) {
-	   .parallax-container .section {
-	     position: absolute;
-	     top: 40%;
-	   }
-	   #index-banner .section {
-	     top: 10%;
-	   }
-	 }
-
-	 @media only screen and (max-width : 600px) {
-	   #index-banner .section {
-	     top: 0;
-	   }
-	 }
-
-	 .icon-block {
-	   padding: 0 15px;
-	 }
-	 .icon-block .material-icons {
-	   font-size: inherit;
-	 }
-
-	 footer.page-footer {
-	   margin: 0;
-	 }
+	     
 	     </style>
-	   <link href="Assets/Frontend/js/style.css" type="text/css" rel="stylesheet" media="screen,projection">
 	 </head>
 	 <body data-gr-c-s-loaded="true">
 	   <nav class="white" role="navigation">
 	     <div class="nav-wrapper container">
-	       <a id="logo-container" href="#" class="brand-logo">TimeLover</a>
+	       <a id="logo-container" href="http://localhost/timelover/#" class="brand-logo">TimeLover</a>
 	       <ul class="right hide-on-med-and-down">
-	         <li><a href="#">Hello</a></li>
+	         <li><a href="http://localhost/timelover/#">Hello</a></li>
 	       </ul>
 
 	       <ul id="nav-mobile" class="sidenav">
-	         <li><a href="#">Navbar Link</a></li>
+	         <li><a href="http://localhost/timelover/#">Navbar Link</a></li>
 	       </ul>
-	       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+	       <a href="http://localhost/timelover/#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 	     </div>
 	   </nav>
 
@@ -105,8 +45,6 @@
 	     </div>
 	     <div class="parallax"><img src="Assets/Frontend/images/time.jpg" alt="Unsplashed background img 1" style="transform: translate3d(-50%, 631.715px, 0px); opacity: 1;"></div>
 	   </div>
-
-
 	   <div class="container">
 	     <div class="section">
 
@@ -142,8 +80,6 @@
 
 	     </div>
 	   </div>
-
-
 	   <div class="parallax-container valign-wrapper">
 	     <div class="section no-pad-bot">
 	       <div class="container">
@@ -168,8 +104,6 @@
 
 	     </div>
 	   </div>
-
-
 	   <div class="parallax-container valign-wrapper">
 	     <div class="section no-pad-bot">
 	       <div class="container">
@@ -198,9 +132,10 @@
 		 						 <div class="col l4 s12">
 		 							 <h5 class="white-text">Người Thực Hiện</h5>
 		 							 <ul>
-		 								 <li><a class="grey-text text-lighten-3" href="#">Phạm Khánh Dư   MSV: 1141360078</a></li>
-		 								 <li><a class="grey-text text-lighten-3" href="#">Phạm Khánh Dư   MSV: 1141360078</a></li>
-		 								 <li><a class="grey-text text-lighten-3" href="#">Phạm Khánh Dư   MSV: 1141360078</a></li>
+
+		 								 <li><a class="grey-text text-lighten-3" href="http://localhost/timelover/#!">Phạm Khánh Dư   MSV: 1141360078</a></li>
+		 								 <li><a class="grey-text text-lighten-3" href="http://localhost/timelover/#!">Phạm Khánh Dư   MSV: 1141360078</a></li>
+		 								 <li><a class="grey-text text-lighten-3" href="http://localhost/timelover/#!">Phạm Khánh Dư   MSV: 1141360078</a></li>
 
 		 							 </ul>
 		 						 </div>
@@ -249,3 +184,17 @@
 
 
 <div class="sidenav-overlay"></div><div class="drag-target"></div><div class="sidenav-overlay"></div><div class="drag-target"></div></body></html>
+=======
+		 					 <a class="grey-text text-lighten-4 right" href="http://localhost/timelover/#!"></a>
+		 					 </div>
+		 				 </div>
+		 			 </footer>
+	   <!--  Scripts-->
+	   <script type="text/javascript" src="Assets/Frontend/js/js_BE.js"></script>
+	   <script src="Assets/Frontend/js/jquery-2.1.1.min.js.tải xuống"></script>
+	   <!-- <script src="Assets/Frontend/js/materialize.js.tải xuống"></script> -->
+	   <!-- <script src="Assets/Frontend/js/init.js.tải xuống"></script> -->
+<div class="sidenav-overlay"></div><div class="drag-target"></div><div class="sidenav-overlay"></div><div class="drag-target"></div>
+	</body>
+</html>
+>>>>>>> login

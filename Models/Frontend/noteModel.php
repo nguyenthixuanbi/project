@@ -1,42 +1,44 @@
 <?php 
 	trait noteModel{
-		public function fetchAll($from, $pageSize){
+		public function fetchAll($id,$from, $pageSize){
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();
 			//thuc thi truy van
-			$query = $conn->query("select * from note order by id desc limit $from, $pageSize");
+			$query = $conn->prepare("select * from note where fk_user_id=:id order by id desc limit $from, $pageSize");
 			//lay tat ca ket qua tra ve
-			return $query->fetchAll();
+			$query->execute([":id"=>$id]);
+			$result=$query->fetchAll();
+			return $result;
 		}
-		public function totalRecord(){
+		public function totalRecord($id){
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();
 			//thuc thi truy van
-			$query = $conn->query("select * from note");
+			$query = $conn->prepare("select * from note where fk_user_id=:id");
+			$query->execute([":id"=>$id]);
 			//tra ve tong so luong ban ghi
 			return $query->rowCount();
 		}
-		//lay mot ban ghi
 		public function fetch($id){
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();
 			//chuan bi truy van
 			$query = $conn->prepare("select * from note where id=:id");
 			//thuc thi truy van
-			$query->execute(array("id"=>$id));
+			$query->execute([':id'=>$id]);
 			//tra ve tong so luong ban ghi
 			return $query->fetch();
 		}
 		//update ban ghi
 		public function update($id){
 			$work_note = $_POST["worknote"];
-			$time_note = date("Y/m/d");
+			$time_note = $_POST['daynote'];
+			$a=$_SESSION['id'];
 			//update ban ghi
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();
 			//chuan bi truy van
-			$query = $conn->prepare("update note set worknote=:worknote,time_note=:time_note where id=:id");
-			
+			$query = $conn->prepare("update note set worknote=:worknote,time_note=:time_note, fk_user_id=$a where id=:id");
 			//thuc thi truy van
 			$query->execute(array("id"=>$id,"worknote"=>$work_note, "time_note"=>$time_note));
 		}
@@ -44,11 +46,13 @@
 		public function insert(){
 			$work_note = $_POST["worknote"];
 			$time_note = date("Y/m/d");
-			//update ban ghi
+			$time_note = $_POST['daynote'];
+			$a=$_SESSION['id'];
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();
 			//chuan bi truy van
-			$query = $conn->prepare("insert into note set worknote=:worknote, time_note=:time_note");
+
+			$query = $conn->prepare("insert into note set worknote=:worknote, time_note=:time_note, fk_user_id = $a");
 			//thuc thi truy van
 			$query->execute(array("worknote"=>$work_note, "time_note"=>$time_note));
 		}

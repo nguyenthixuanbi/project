@@ -10,7 +10,6 @@
  			if($data != NULL)
  				extract($data);
  			//neu ton tai duong dan $fileName thi include no
- 			//---
 			//doc noi dung cua file $fileName cua view
 			if(file_exists($fileName)){				
 				//---
@@ -30,9 +29,20 @@
 			}
  		}
  		//ham xac thuc dang nhap
+ 		// public function authentication(){
+ 		// 	if(isset($_SESSION['id'])){
+	 	// 		if($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2 ){
+	 	// 			header("location:index.php?area=Backend&controller=Home");
+	 	// 		}
+	 	// 		else{
+ 		// 			header("location:index.php?area=Frontend&controller=HomeView");	 					
+	 	// 		}
+ 		// 	}
+ 		// }
  		public function authentication(){
- 			if($_SESSION["email"] == NULL)
- 				header("location:index.php?area=Backend&controller=Login");
+ 			if(!isset($_SESSION['id']) && !isset($_SESSION['email'])){
+ 				header("location:index.php?controller=Login");	 					
+ 			}
  		}
  	}
  ?>

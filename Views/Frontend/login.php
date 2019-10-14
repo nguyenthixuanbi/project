@@ -31,7 +31,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="email" name="email" placeholder="Email">
+						<input class="input100" type="email" name="email" placeholder="Ehahamail">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
@@ -43,7 +43,7 @@
 					<div class="contact100-form-checkbox">
 						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
 						<label class="label-checkbox100" for="ckb1">
-							Lưu lại
+							Nhớ tôi
 						</label>
 					</div>
 

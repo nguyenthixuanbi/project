@@ -2,8 +2,10 @@
 	include "Models/Frontend/workContentModel.php";
 	class workContentController extends Controller{
 		use workContentModel;
+		public function __construct(){
+			$this->authentication();
+		}
 		public function index(){
-			
 			//số bản ghi trên 1 trang
 			$pageSize = 10;
 			//tinh tong so ban ghi
@@ -37,7 +39,7 @@
 			//goi ham insert trong model de insert ban ghi
 			$this->update($id);
 			$a=$_SESSION['work'];
-			header("location:index.php?area=Frontend&controller=workContent&action=index&id=$a");
+			header("location:index.php?area=Frontend&controller=workContent&id=$a");
 		}
 		public function add(){
 			$id = isset($_GET["id"])&&is_numeric($_GET["id"]) ? $_GET["id"] : 0;

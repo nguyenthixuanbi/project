@@ -1,10 +1,7 @@
 <?php 
-	//include model
-	include "Models/Backend/UserModel.php";
-	class UserController extends Controller{
-		//khai bao de su dung class UserModel
-		use UserModel;
-		//ham tao de xac thuc dang nhap
+	include "Models/Backend/ManagerModel.php";
+	class ManagerController extends Controller{
+		use ManagerModel;
 		public function __construct(){
 			$this->authentication();
 		}
@@ -23,7 +20,7 @@
 			//lay cac ban ghi
 			$data = $this->fetchAll($from,$pageSize);
 			//goi view, truyen du lieu ra view
-			$this->renderHTML("Views/Backend/UserView.php",array("data"=>$data,"numPage"=>$numPage));
+			$this->renderHTML("Views/Backend/ManagerView.php",array("data"=>$data,"numPage"=>$numPage));
 		}
 		public function edit(){
 			$id = isset($_GET["id"])&&is_numeric($_GET["id"]) ? $_GET["id"] : 0;
@@ -51,9 +48,7 @@
 		//do add user
 		public function doAdd(){
 			//goi ham insert trong model de insert ban ghi
-			$user = $this->insert();
-			$user_id=$user->id;
-			$this->insertUserRole($user_id,3);
+			$this->insert();
 			//quay tro lai duong dan
 			header("location:index.php?area=backend&controller=User");
 		}
@@ -66,4 +61,4 @@
 			header("location:index.php?area=backend&controller=User");
 		}
 	}
- ?>
+?>

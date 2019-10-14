@@ -21,12 +21,10 @@
               $a=$_SESSION['work'];
             }
             ?>
-      <input readonly type="text" name="fk_work_id" class="form-control" value="<?php echo isset($work->id)? $work->id:$a; ?>">
+      <input readonly type="text" name="fk_work_id" class="form-control" value="<?php echo isset($work->pk_work_id)? $work->pk_work_id:$a; ?>">
         </div>
       </div>
     <!-- end row -->
-
-
     <!-- row -->
     <div class="row" style="margin-bottom: 5px;">
       <div class="col-md-3">Nội dung</div>

@@ -4,22 +4,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>AdminLTE 2 | Dashboard</title>
-    <!-- load ckeditor vao day -->
+    <!-- load ckeditor vao day --> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <script type="text/javascript" src="Assets/Backend/ckeditor/ckeditor.js"></script>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="assets/backend/layout1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Assets/Backend/layout1/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="assets/backend/layout1/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/backend/layout1/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="assets/backend/layout1/css/_all-skins.min.css">
-    <!-- Google Font -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-</head>
+    <link rel="stylesheet" href="Assets/Backend/layout1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Assets/Backend/layout1/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="Assets/Backend/layout1/css/_all-skins.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+   
+    <script type="text/javascript" src="Assets/Backend/layout1/js/comfirm.js"></script>
+    
+  </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -43,13 +45,13 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="assets/backend/layout1/images/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <img src="Assets/Backend/layout1/images/user2-160x160.jpg" class="user-image" alt="User Image">
                             <span class="hidden-xs"><?php echo $_SESSION["email"]; ?></span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="assets/backend/layout1/images/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="Assets/Backend/layout1/images/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                 <p>
                                     Your profile
@@ -78,7 +80,7 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="assets/backend/layout1/images/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="Assets/Backend/layout1/images/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p><?php echo $_SESSION["email"]; ?></p>
@@ -90,11 +92,19 @@
                 <li class="header">LAOYOUT ADMIN</li>
                 <li>
                     <a href="index.php?area=Backend&controller=User">
-                        <i class="fa fa-code"></i> <span>Quản lý user</span>
+                        <i class="fa fa-address-book"></i> <span>Quản lý user</span>
                         <span class="pull-right-container">
-            </span>
+                        </span>
                     </a>
                 </li>
+                <?php if ($_SESSION['role_id'] == 1){?>
+                    <li><a href="index.php?area=Backend&controller=Manager"><i class="fa fa-id-card"></i>Quản lý quản trị</a> </li>
+                <?php } ?>
+                <?php if($_SESSION['role_id']==2): ?>
+                    <li><a href="index.php?area=Backend&controller=Assignwork"><i class="fa fa-certificate"></i><span>Giao việc</span>
+                        <span class="pull-right-container">
+                        </span></a> </li>
+                <?php endif; ?>
                 <li>
                     <a href="index.php?area=Backend&controller=Logout">
                         <i class="fa fa-th"></i> <span>Đăng xuất</span>
@@ -109,10 +119,6 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>
-                Dashboard
-                <small>Control panel</small>
-            </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li class="active">Dashboard</li>
@@ -144,12 +150,12 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="assets/backend/layout1/js/jquery.min.js"></script>
+<script src="Assets/Backend/layout1/js/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="assets/backend/layout1/js/jquery-ui.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="assets/backend/layout1/js/bootstrap.min.js"></script>
+<script src="Assets/Backend/layout1/js/jquery-ui.min.js"></script>
+<script src="Assets/Backend/layout1/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
-<script src="assets/backend/layout1/js/adminlte.min.js"></script>
+<script src="Assets/Backend/layout1/js/adminlte.min.js"></script>
+
 </body>
 </html>

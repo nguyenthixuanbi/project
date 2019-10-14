@@ -5,7 +5,7 @@
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();
 			//thuc thi truy van
-			$query = $conn->query("select * from work_content inner join work on work.id=work_content.fk_work_id where work_content.fk_work_id=$id order by work_content.workcontent_id desc limit $from, $pageSize");
+			$query = $conn->query("select * from work_content inner join work on work.pk_work_id=work_content.fk_work_id where work_content.fk_work_id=$id order by work_content.workcontent_id desc limit $from, $pageSize");
 			//lay tat ca ket qua tra ve
 			return $query->fetchAll();
 		}
@@ -20,7 +20,7 @@
 		}
 		public function listWorkContent($id){
 			$conn=Connection::getInstance();
-			$query = $conn->prepare("select * from work_content inner join work on work.id=work_content.fk_work_id where work_content.fk_work_id=:id ");
+			$query = $conn->prepare("select * from work_content inner join work on work.pk_work_id=work_content.fk_work_id where work_content.fk_work_id=:id ");
 			$query->setFetchMode(PDO::FETCH_OBJ);
 			//thuc hien truy van
 			$query->execute(array("id"=>$id));
@@ -92,7 +92,7 @@
 			//$id = isset($_GET["id"])&&is_numeric($_GET["id"]) ? $_GET["id"] : 0;
 			$conn = Connection::getInstance();
 			//thuc thi truy van
-			$query = $conn->prepare("select * from work where id=:id");
+			$query = $conn->prepare("select * from work where pk_work_id=:id");
 			$query->execute(array("id"=>$id));
 			//tra ve mot ban ghi
 			return $query->fetch();
@@ -101,7 +101,7 @@
 			$id = isset($_GET["id"])&&is_numeric($_GET["id"]) ? $_GET["id"] : 0;
 			$conn = Connection::getInstance();
 			//thuc thi truy van
-			$query = $conn->query("select name_work from work where id=$id");
+			$query = $conn->query("select name_work from work where pk_work_id=$id");
 			//tra ve mot ban ghi
 			return $query->fetch();
 		}
